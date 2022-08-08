@@ -32,13 +32,14 @@
             this.listView = new System.Windows.Forms.ListView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownMu = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownSig = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.columnHeaderA = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -94,9 +95,9 @@
             this.panel6.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMu)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSig)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -137,6 +138,7 @@
             this.listView.Size = new System.Drawing.Size(209, 569);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
             // 
             // panel6
             // 
@@ -152,7 +154,7 @@
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.button1);
+            this.panel16.Controls.Add(this.buttonLoad);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel16.Location = new System.Drawing.Point(25, 78);
             this.panel16.Name = "panel16";
@@ -160,23 +162,24 @@
             this.panel16.Size = new System.Drawing.Size(159, 44);
             this.panel16.TabIndex = 5;
             // 
-            // button1
+            // buttonLoad
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(5, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 29);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Load Sensor Data";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLoad.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.buttonLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoad.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonLoad.Location = new System.Drawing.Point(5, 8);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(149, 29);
+            this.buttonLoad.TabIndex = 5;
+            this.buttonLoad.Text = "Load Sensor Data";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.numericUpDown2);
+            this.panel8.Controls.Add(this.numericUpDownMu);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(25, 46);
@@ -185,14 +188,19 @@
             this.panel8.Size = new System.Drawing.Size(159, 32);
             this.panel8.TabIndex = 1;
             // 
-            // numericUpDown2
+            // numericUpDownMu
             // 
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.numericUpDown2.Location = new System.Drawing.Point(71, 5);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(83, 23);
-            this.numericUpDown2.TabIndex = 3;
+            this.numericUpDownMu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownMu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.numericUpDownMu.Location = new System.Drawing.Point(71, 5);
+            this.numericUpDownMu.Name = "numericUpDownMu";
+            this.numericUpDownMu.Size = new System.Drawing.Size(83, 23);
+            this.numericUpDownMu.TabIndex = 3;
+            this.numericUpDownMu.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -207,7 +215,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.numericUpDown1);
+            this.panel7.Controls.Add(this.numericUpDownSig);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(25, 10);
@@ -216,14 +224,19 @@
             this.panel7.Size = new System.Drawing.Size(159, 36);
             this.panel7.TabIndex = 0;
             // 
-            // numericUpDown1
+            // numericUpDownSig
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.numericUpDown1.Location = new System.Drawing.Point(71, 5);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(83, 23);
-            this.numericUpDown1.TabIndex = 1;
+            this.numericUpDownSig.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDownSig.Dock = System.Windows.Forms.DockStyle.Right;
+            this.numericUpDownSig.Location = new System.Drawing.Point(71, 5);
+            this.numericUpDownSig.Name = "numericUpDownSig";
+            this.numericUpDownSig.Size = new System.Drawing.Size(83, 23);
+            this.numericUpDownSig.TabIndex = 1;
+            this.numericUpDownSig.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -235,6 +248,10 @@
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sigma";
+            // 
+            // columnHeaderA
+            // 
+            this.columnHeaderA.Text = "Sensor A";
             // 
             // panel3
             // 
@@ -361,6 +378,7 @@
             this.buttonSS_B.TabIndex = 3;
             this.buttonSS_B.Text = "Sort";
             this.buttonSS_B.UseVisualStyleBackColor = false;
+            this.buttonSS_B.Click += new System.EventHandler(this.buttonSS_B_Click);
             // 
             // label9
             // 
@@ -394,7 +412,6 @@
             this.textBoxBSR_B.ReadOnly = true;
             this.textBoxBSR_B.Size = new System.Drawing.Size(96, 23);
             this.textBoxBSR_B.TabIndex = 3;
-            this.textBoxBSR_B.TextChanged += new System.EventHandler(this.textBoxBSR_B_TextChanged);
             // 
             // buttonBSR_B
             // 
@@ -444,7 +461,6 @@
             this.textBoxBSI_B.ReadOnly = true;
             this.textBoxBSI_B.Size = new System.Drawing.Size(96, 23);
             this.textBoxBSI_B.TabIndex = 3;
-            this.textBoxBSI_B.TextChanged += new System.EventHandler(this.textBoxBSI_B_TextChanged);
             // 
             // buttonBSI_B
             // 
@@ -647,6 +663,7 @@
             this.buttonSS_A.TabIndex = 2;
             this.buttonSS_A.Text = "Sort";
             this.buttonSS_A.UseVisualStyleBackColor = false;
+            this.buttonSS_A.Click += new System.EventHandler(this.buttonSS_A_Click);
             // 
             // label6
             // 
@@ -680,7 +697,6 @@
             this.textBoxBSR_A.ReadOnly = true;
             this.textBoxBSR_A.Size = new System.Drawing.Size(96, 23);
             this.textBoxBSR_A.TabIndex = 3;
-            this.textBoxBSR_A.TextChanged += new System.EventHandler(this.textBoxBSR_A_TextChanged);
             // 
             // buttonBSR_A
             // 
@@ -730,7 +746,6 @@
             this.textBoxBSI_A.ReadOnly = true;
             this.textBoxBSI_A.Size = new System.Drawing.Size(96, 23);
             this.textBoxBSI_A.TabIndex = 3;
-            this.textBoxBSI_A.TextChanged += new System.EventHandler(this.textBoxBSI_A_TextChanged);
             // 
             // buttonBSI_A
             // 
@@ -747,6 +762,7 @@
             this.buttonBSI_A.TabIndex = 2;
             this.buttonBSI_A.Text = "Search";
             this.buttonBSI_A.UseVisualStyleBackColor = false;
+            this.buttonBSI_A.Click += new System.EventHandler(this.buttonBSI_A_Click);
             // 
             // label4
             // 
@@ -854,10 +870,10 @@
             this.panel16.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMu)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSig)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
@@ -903,8 +919,8 @@
         private Panel panel8;
         private Panel panel7;
         private Label label1;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown numericUpDownSig;
+        private NumericUpDown numericUpDownMu;
         private Label label2;
         private ListView listView;
         private Panel panel10;
@@ -931,7 +947,7 @@
         private Button buttonSS_A;
         private Label label6;
         private Panel panel16;
-        private Button button1;
+        private Button buttonLoad;
         private Panel panel5;
         private Panel panel17;
         private Panel panel18;
@@ -956,5 +972,6 @@
         private Label label13;
         private Button buttonSS_B;
         private TextBox textBoxSS_B;
+        private ColumnHeader columnHeaderA;
     }
 }

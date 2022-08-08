@@ -15,3 +15,5 @@ D:\tafe\6 Complex data Structures\A\AT1\Satellite Data Processing\Satellite-Data
 D:\tafe\6 Complex data Structures\A\AT1\Satellite Data Processing\Satellite-Data-Processing\Satellite Data Processing\Satellite Data Processing\obj\Debug\net6.0-windows\Satellite Data Processing.genruntimeconfig.cache
 D:\tafe\6 Complex data Structures\A\AT1\Satellite Data Processing\Satellite-Data-Processing\Satellite Data Processing\Satellite Data Processing\obj\Debug\net6.0-windows\ref\Satellite Data Processing.dll
 D:\tafe\6 Complex data Structures\A\AT1\Satellite Data Processing\Satellite-Data-Processing\Satellite Data Processing\Satellite Data Processing\obj\Debug\net6.0-windows\Satellite_Data_Processing.SatDataProcessing.resources
+D:\tafe\6 Complex data Structures\A\AT1\Satellite Data Processing\Satellite-Data-Processing\Satellite Data Processing\Satellite Data Processing\bin\Debug\net6.0-windows\Galileo.dll
+D:\tafe\6 Complex data Structures\A\AT1\Satellite Data Processing\Satellite-Data-Processing\Satellite Data Processing\Satellite Data Processing\obj\Debug\net6.0-windows\Satellite Data Processing.csproj.CopyComplete
